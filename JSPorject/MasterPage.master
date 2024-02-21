@@ -1,0 +1,387 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<script runat="server">
+
+</script>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+</head>
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <div id="logo" class="fl_left">
+                <h1>שלום <%=Session["Login"] %>
+                </h1>
+            </div>
+            <!-- ################################################################################################ -->
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="HomePage.aspx">Home</a></li>
+                    <li><a class="drop" href="#">Marvel</a>
+                        <ul>
+                            <li><a class="drop">The Avengers</a>
+                                <ul>
+                                    <li><a href="IronMan.aspx">Iron Man</a></li>
+                                    <li><a href="SpiderMan.aspx">Spider-Man</a></li>
+                                    <li><a href="BlackPanther.aspx">Black Panther</a></li>
+                                    <li><a href="DoctorStrange.aspx">Doctor Strange</a></li>
+                                    <li><a href="Hulk.aspx">Hulk</a></li>
+                                    <li><a href="BlackWidow.aspx">Black Widow</a></li>
+                                    <li><a href="Thor.aspx">Thor</a></li>
+                                    <li><a href="CapitanAmerica.aspx">Capitan America</a></li>
+                                    <li><a href="AntMan.aspx">Ant-Man</a></li>
+                                    <li><a href="CaptainMarvel.aspx">Captain Marvel</a></li>
+                                    <li><a href="ScarletWitch.aspx">Scarlet Witch</a></li>
+                                    <li><a href="Vision.aspx">Vision</a></li>
+                                    <li><a href="Quicksilver.aspx">Quicksilver</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a class="drop">Guardians of the Galaxy</a>
+                                <ul>
+                                    <li><a href="Groot.aspx">Groot</a></li>
+                                    <li><a href="StarLord.aspx">Star Lord</a></li>
+                                    <li><a href="RocketRaccoon.aspx">Rocket Raccoon</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="drop">X-Men</a>
+                                <ul>
+                                    <li><a href="Wolverine.aspx">Wolverine</a></li>
+                                    <li><a href="Deadpool.aspx">Deadpool</a></li>
+                                    <li><a href="Storm.aspx">Storm</a></li>
+                                    <li><a href="ProfessorX.aspx">Professor X</a></li>
+                                    <li><a href="Cyclops.aspx">Cyclops</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a class="drop">Fantastic Four</a>
+                                <ul>
+                                    <li><a href="HumanTorch.aspx">Human Torch</a></li>
+                                    <li><a href="MisterFantastic.aspx">Mister Fantastic</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a class="drop" href="#">DC</a>
+                        <ul>
+                            <li><a class="drop">Justice League</a>
+                                <ul>
+                                    <li><a href="TheFlash.aspx">The Flash</a></li>
+                                    <li><a href="GreenArrow.aspx">Green Arrow</a></li>
+                                    <li><a href="Batman.aspx">Batman</a></li>
+                                    <li><a href="Superman.aspx">Superman</a></li>
+                                    <li><a href="WonderWoman.aspx">Wonder Woman</a></li>
+                                    <li><a href="Aquaman.aspx">Aquaman</a></li>
+                                    <li><a href="GreenLantern.aspx">Green Lantern</a></li>
+                                    <li><a href="MartianManhunter.aspx">Martian Manhunter</a></li>
+                                    <li><a href="Shazam.aspx">Shazam</a></li>
+                                    <li><a href="BlackCanary.aspx">Black Canary</a></li>
+                                </ul>
+
+                            </li>
+                            <li><a class="drop">Legends of Tomorrow</a>
+                                <ul>
+                                    <li><a href="Atom.aspx">Atom</a></li>
+                                    <li><a href="WhiteCanary.aspx">White Canary</a></li>
+                                    <li><a href="Firestorm.aspx">Firestorm</a></li>
+                                    <li><a href="JohnConstantine.aspx">John Constantine</a></li>
+                                    <li><a href="HeatWave.aspx">Heat Wave</a></li>
+                                    <li><a href="CitizenSteel.aspx">Citizen Steel</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="drop">Teen Titans</a>
+                                <ul>
+                                    <li><a href="Nightwing.aspx">Nightwing</a></li>
+                                    <li><a href="BeastBoy.aspx">Beast Boy</a></li>
+                                    <li><a href="Raven.aspx">Raven</a></li>
+                                    <li><a href="Cyborg.aspx">Cyborg</a></li>
+                                    <li><a href="Starfire.aspx">Starfire</a></li>
+                                </ul>
+                            </li>
+
+                            <li><a class="drop">Justice Society of America</a>
+                                <ul>
+                                    <li><a href="Vixen.aspx">Vixen</a></li>
+                                    <li><a href="Stargirl.aspx">Stargirl</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="SignUp.aspx">הירשם</a></li>
+                    <li><a href="LogIn.aspx">התחברות</a></li>
+                    <% if (Session["Login"].ToString() != "אורח")
+                    {
+                        Response.Write("<li><a class='drop'>אפשרויות לרשומים</a><ul><li><a href='Quiz.aspx'>שאלון</a></li><li><a href='Gallery.aspx'>גלריה</a></li><li><a href='Logout.aspx'>התנתק</a></li><li><a href='Update.aspx'>עדכון פרטים</a></li></ul></li>");
+                    }%>
+                    <% if (Session["Login"].ToString() == "admin")
+                    {
+                        Response.Write("<li><a class='drop'>אפשרויות למנהלים</a><ul><li><a href='ShowData.aspx'>הצגת נתונים</a></li><li><a href='OneSection.aspx'>הצגת משתמשים לפי חתך אחד</a></li><li><a href='TwoSection.aspx'>הצגת משתמשים לפי שני חתכים</a></li><li><a href='AdminUpDel.aspx'>מחיקת/עדכון של נתונים על משתמשים</a></li><li><a href='Stats.aspx'>סטטיסטיקות</a></li></ul></li>");
+                    }%>
+                    <li><a>מונה כניסות: <%=Application["counter"] %></a></li>
+                </ul>
+            </nav>
+            <!-- ################################################################################################ -->
+        </header>
+    </div>
+
+    <asp:ContentPlaceHolder ID="imgBanner" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- ################################################################################################ -->
+    <div class="wrapper">
+        <article id="pageintro" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <p style="margin-top: 30px">
+                <asp:ContentPlaceHolder ID="heroName" runat="server"></asp:ContentPlaceHolder>
+            </p>
+            <!-- ################################################################################################ -->
+        </article>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <div class="wrapper row2">
+        <div id="introblocks" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <article class="one_quarter first">
+                <asp:ContentPlaceHolder ID="iconHero" runat="server"></asp:ContentPlaceHolder>
+                <h3 class="heading">:שם מלא<br />
+                    <asp:ContentPlaceHolder ID="nameHero" runat="server"></asp:ContentPlaceHolder>
+                </h3>
+            </article>
+            <article class="one_quarter">
+                <img style="margin-bottom: 12px;" src="https://img.icons8.com/color/70/000000/comic-book.png" />
+                <h3 class="heading">:הופעה ראשונה
+                            <br />
+                    <asp:ContentPlaceHolder ID="firstShow" runat="server"></asp:ContentPlaceHolder>
+                </h3>
+            </article>
+            <article class="one_quarter">
+                <img style="margin-bottom: 12px;" src="https://img.icons8.com/color/70/000000/gender--v1.png" />
+                <h3 class="heading">:גזע 
+                            <br />
+                    <asp:ContentPlaceHolder ID="race" runat="server"></asp:ContentPlaceHolder>
+                </h3>
+            </article>
+            <article class="one_quarter">
+                <asp:ContentPlaceHolder ID="DcMarvel" runat="server"></asp:ContentPlaceHolder>
+                <h3 class="heading">:חברת הפצה
+                            <br />
+                    <asp:ContentPlaceHolder ID="DcMarvelText" runat="server"></asp:ContentPlaceHolder>
+                </h3>
+            </article>
+            <!-- ################################################################################################ -->
+            <div class="clear"></div>
+        </div>
+    </div>
+    <!-- ################################################################################################ -->
+    </div>
+
+
+        <div class="wrapper row3">
+            <main class="hoc container clear">
+                <!-- main body -->
+                <!-- ################################################################################################ -->
+                <div class="one_half first">
+                    <asp:ContentPlaceHolder ID="sideImg" runat="server"></asp:ContentPlaceHolder>
+                </div>
+                <div class="one_half">
+                    <br>
+                    <h2 class="heading">
+                        <asp:ContentPlaceHolder ID="superPowersHeadLine" runat="server"></asp:ContentPlaceHolder>
+                    </h2>
+                    <p>
+                        <asp:ContentPlaceHolder ID="superPowersText" runat="server"></asp:ContentPlaceHolder>
+                    </p>
+                    <ul>
+                        <asp:ContentPlaceHolder ID="superPowers" runat="server"></asp:ContentPlaceHolder>
+
+                    </ul>
+                </div>
+                <!-- ################################################################################################ -->
+                <!-- / main body -->
+                <div class="clear"></div>
+            </main>
+        </div>
+
+
+
+    <asp:ContentPlaceHolder ID="actorsBackground" runat="server">
+    </asp:ContentPlaceHolder>
+    <div class="hoc container clear">
+        <!-- ################################################################################################ -->
+        <div class="center btmspace-80">
+            <h2 class="heading">:שחקנים אשר שיחקו את הדמות</h2>
+        </div>
+        <article class="one_third first">
+            <asp:ContentPlaceHolder ID="act1Img" runat="server">
+            </asp:ContentPlaceHolder>
+            <h2 class="heading font-x1">
+                <asp:ContentPlaceHolder ID="act1" runat="server">
+                </asp:ContentPlaceHolder>
+            </h2>
+            <p class="btmspace-30">
+                <asp:ContentPlaceHolder ID="act1desc" runat="server">
+                </asp:ContentPlaceHolder>
+            </p>
+        </article>
+        <article class="one_third">
+            <asp:ContentPlaceHolder ID="act2Img" runat="server"></asp:ContentPlaceHolder>
+            <h2 class="heading font-x1">
+                <asp:ContentPlaceHolder ID="act2" runat="server"></asp:ContentPlaceHolder>
+            </h2>
+            <p class="btmspace-30">
+                <asp:ContentPlaceHolder ID="act2desc" runat="server"></asp:ContentPlaceHolder>
+            </p>
+        </article>
+        <article class="one_third">
+            <asp:ContentPlaceHolder ID="act3Img" runat="server"></asp:ContentPlaceHolder>
+            <h2 class="heading font-x1">
+                <asp:ContentPlaceHolder ID="act3" runat="server"></asp:ContentPlaceHolder>
+            </h2>
+            <p class="btmspace-30">
+                <asp:ContentPlaceHolder ID="act3desc" runat="server"></asp:ContentPlaceHolder>
+            </p>
+        </article>
+        <!-- ################################################################################################ -->
+        <div class="clear"></div>
+    </div>
+    </div>
+    <div class="wrapper row4">
+        <footer id="footer" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <div class="center btmspace-80">
+                <h2 class="heading">Marvel</h2>
+            </div>
+            <div class="one_quarter first">
+                <h6 class="title" style="font-size: 14px; text-align: center">The Avengers</h6>
+                <ul style="list-style: none; text-align: center; font-weight: 600; padding-left: 0">
+                    <li><a href="Hulk.aspx">Hulk</a></li>
+                    <li><a href="Thor.aspx">Thor</a></li>
+                    <li><a href="Vision.aspx">Vision</a></li>
+                    <li><a href="AntMan.aspx">Ant-Man</a></li>
+                    <li><a href="IronMan.aspx">Iron Man</a></li>
+                    <li><a href="Quicksilver.aspx">Quicksilver</a></li>
+                    <li><a href="SpiderMan.aspx">Spider-Man</a></li>
+                    <li><a href="BlackWidow.aspx">Black Widow</a></li>
+                    <li><a href="ScarletWitch.aspx">Scarlet Witch</a></li>
+                    <li><a href="BlackPanther.aspx">Black Panther</a></li>
+                    <li><a href="CaptainMarvel.aspx">Captain Marvel</a></li>
+                    <li><a href="DoctorStrange.aspx">Doctor Strange</a></li>
+                    <li><a href="CapitanAmerica.aspx">Capitan America</a></li>
+
+                </ul>
+            </div>
+
+            <div class="one_quarter">
+                <h6 class="title" style="font-size: 14px; text-align: center">X-Men</h6>
+                <ul style="list-style: none; text-align: center; font-weight: 600; padding-left: 0">
+                    <li><a href="Storm.aspx">Storm</a></li>
+                    <li><a href="Cyclops.aspx">Cyclops</a></li>
+                    <li><a href="Deadpool.aspx">Deadpool</a></li>
+                    <li><a href="Wolverine.aspx">Wolverine</a></li>
+                    <li><a href="ProfessorX.aspx">Professor X</a></li>
+                </ul>
+
+            </div>
+            <div class="one_quarter">
+                <h6 class="title" style="font-size: 14px; text-align: center">Guardians of the Galaxy</h6>
+                <ul style="list-style: none; text-align: center; font-weight: 600; padding-left: 0">
+                    <li><a href="Groot.aspx">Groot</a></li>
+                    <li><a href="StarLord.aspx">Star Lord</a></li>
+                    <li><a href="RocketRaccoon.aspx">Rocket Raccoon</a></li>
+                </ul>
+            </div>
+            <div class="one_quarter">
+                <h6 class="title" style="font-size: 14px; text-align: center">Fantastic Four</h6>
+                <ul style="list-style: none; text-align: center; font-weight: 600; padding-left: 0">
+                    <li><a href="HumanTorch.aspx">Human Torch</a></li>
+                    <li><a href="MisterFantastic.aspx">Mister Fantastic</a></li>
+                </ul>
+            </div>
+            <!-- ################################################################################################ -->
+        </footer>
+    </div>
+    <div class="wrapper row4">
+        <footer id="footer" class="hoc clear">
+            <!-- ################################################################################################ -->
+            <div class="center btmspace-80">
+                <h2 class="heading">DC</h2>
+            </div>
+            <div class="one_quarter first">
+                <h6 class="title" style="font-size: 14px; text-align: center">Justice League</h6>
+                <ul style="list-style: none; text-align: center; font-weight: 600; padding-left: 0">
+                    <li><a href="Shazam.aspx">Shazam</a></li>
+                    <li><a href="Batman.aspx">Batman</a></li>
+                    <li><a href="TheFlash.aspx">The Flash</a></li>
+                    <li><a href="Aquaman.aspx">Aquaman</a></li>
+                    <li><a href="Superman.aspx">Superman</a></li>
+                    <li><a href="GreenArrow.aspx">Green Arrow</a></li>
+                    <li><a href="BlackCanary.aspx">Black Canary</a></li>
+                    <li><a href="GreenLantern.aspx">Green Lantern</a></li>
+                    <li><a href="wonderwoman.aspx">wonder woman</a></li>
+                    <li><a href="MartianManhunter.aspx">Martian Manhunter</a></li>
+                </ul>
+            </div>
+
+            <div class="one_quarter">
+                <h6 class="title" style="font-size: 14px; text-align: center">Legends of Tomorrow</h6>
+                <ul style="list-style: none; text-align: center; font-weight: 600; padding-left: 0">
+                    <li><a href="Atom.aspx">Atom</a></li>
+                    <li><a href="Firestorm.aspx">Firestorm</a></li>
+                    <li><a href="HeatWave.aspx">Heat Wave</a></li>
+                    <li><a href="CitizenSteel.aspx">Citizen Steel</a></li>
+                    <li><a href="WhiteCanary.aspx">White Canary</a></li>
+                    <li><a href="JohnConstantine.aspx">John Constantine</a></li>
+                </ul>
+
+            </div>
+            <div class="one_quarter">
+                <h6 class="title" style="font-size: 14px; text-align: center">Teen Titans</h6>
+                <ul style="list-style: none; text-align: center; font-weight: 600; padding-left: 0">
+                    <li><a href="Raven.aspx">Raven</a></li>
+                    <li><a href="Cyborg.aspx">Cyborg</a></li>
+                    <li><a href="Starfire.aspx">Starfire</a></li>
+                    <li><a href="BeastBoy.aspx">Beast Boy</a></li>
+                    <li><a href="Nightwing.aspx">Nightwing</a></li>
+                </ul>
+            </div>
+            <div class="one_quarter">
+                <h6 class="title" style="font-size: 14px; text-align: center">Fantastic Four</h6>
+                <ul style="list-style: none; text-align: center; font-weight: 600; padding-left: 0">
+                    <li><a href="Vixen.aspx">Vixen</a></li>
+                    <li><a href="Stargirl.aspx">Stargirl</a></li>
+                </ul>
+                </ul>
+            </div>
+            <!-- ################################################################################################ -->
+        </footer>
+    </div>
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <!-- ################################################################################################ -->
+    <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JAVASCRIPTS -->
+    <script src="layout/scripts/jquery.min.js"></script>
+    <script src="layout/scripts/jquery.backtotop.js"></script>
+    <script src="layout/scripts/jquery.mobilemenu.js"></script>
+    <!-- IE9 Placeholder Support -->
+    <script src="layout/scripts/jquery.placeholder.min.js"></script>
+    <!-- / IE9 Placeholder Support -->
+
+
+
+
+</body>
+</html>
